@@ -34,4 +34,4 @@ Makefile.in
 
 #executable files
 
-*.exe
+/**/*.exe
