@@ -4,7 +4,7 @@
 void PROD(Tree T); //preorder node-left-right
 void INOD(Tree T); //inorder left-node-right
 void POD(Tree T); //postorder left-right-node
-void BFS(Tree T); //Breadth-first order
+void BFO(Tree T); //Breadth-first order
 
 int main() {
     //Bai Tap 1 & 2 Chuong III
@@ -26,7 +26,7 @@ int main() {
     printf("preorder: "); PROD(T); printf("\n");
     printf("inorder: "); INOD(T); printf("\n");
     printf("postorder: "); POD(T); printf("\n");
-    printf("BFS: "); BFS(T); printf("\n");
+    printf("breadth-first order: "); BFO(T); printf("\n");
     return 0;
 }
 
@@ -72,7 +72,7 @@ void POD(Tree T){
     }
 }
 
-void BFS(Tree T){
+void BFO(Tree T){
     Queues Q;
     MAKENULL_QUEUE(&Q);
     ENQUEUE(T, &Q);
@@ -90,60 +90,3 @@ void BFS(Tree T){
         }
     }
 }
-
-/*
-
-int is_sibling(Node n, Node m){
-    return PARENT(n) == PARENT(m);
-}
-
-int is_ancestor(Node n, Node m){
-    while (m != NULL){
-        if (m == n)
-            return 1;
-        else
-            m = m->parent;
-    }
-    return 0;
-}
-
-int oneChildNodes(Tree T){
-    if ((T->left == NULL)&&(T->right != NULL)){
-        return (1 + oneChildNodes(T->right));
-    }
-    if ((T->left != NULL)&&(T->right == NULL)){
-        return (1 + oneChildNodes(T->left));
-    }
-    if ((T->left == NULL)&&(T->right == NULL)){
-        return 0;
-    }
-    if ((T->left != NULL)&&(T->right != NULL)){
-        return oneChildNodes(T->left) + oneChildNodes(T->right);
-    }
-}
-
-int numLeafs(Tree T){
-    if ((T->left == NULL)&&(T->right == NULL)){
-        return 1;
-    }
-    if ((T->left == NULL)&&(T->right != NULL)){
-        return numLeafs(T->right);
-    }
-    if ((T->left != NULL)&&(T->right == NULL)){
-        return numLeafs(T->left);
-    }
-    if ((T->left != NULL)&&(T->right != NULL)){
-        return numLeafs(T->left) + numLeafs(T->right);
-    }
-}
-
-Tree CREATE(DataType label, Tree LeftChild, Tree RightChild ){
-    Tree n = (Tree)(malloc(sizeof(Tree)));
-    n->parent = NULL;
-    n->left = LeftChild;
-    n->right = RightChild;
-    n->label = label;
-    return n;
-}
-
-*/

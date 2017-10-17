@@ -10,7 +10,7 @@ void buffer(){
     int i=0;
     char str[255];
     MAKENULL_QUEUE(&b);
-    FILE *f = fopen("test.txt", "r");
+    FILE *f = fopen("text.in", "r");
     while ((fgets(str,255,f)) != NULL){
         ENQUEUE(str, &b);
         i++;

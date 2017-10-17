@@ -1,2 +1,3 @@
-# Data-Structure-Exercises
-All exercises of Data Structure in one place.
+# Data Structure Exercises
+
+All exercises in one place.
