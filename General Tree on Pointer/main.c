@@ -1,4 +1,4 @@
-#include "basicLib_GeneralTree.c"
+#include "basicLib_GeneralTreeOnPointer.c"
 
 
 void PROD(Tree T); //preorder node-left-right
